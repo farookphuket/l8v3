@@ -1,16 +1,19 @@
 <template>
     <div>
-        <div class="navbar-nav">
-                    <router-link to="/" 
-                        class="nav-item nav-link">Home</router-link>
-                    <router-link to="/about" 
-                        class="nav-item nav-link">About</router-link>
+        <pub-nav></pub-nav>
+        <div class="body-content">
+            <router-view></router-view>
         </div>
-        <router-view></router-view>
     </div>
 </template>
+
+
 <script>
+import PubNav from './pages/_include/pub_nav.vue'
 export default{
     name:"App",
+    components:{
+        PubNav,
+    },
 }
 </script>

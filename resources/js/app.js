@@ -21,6 +21,15 @@ import JoditVue from 'jodit-vue3'
 import axios from 'axios'
 import router from './router'
 
+
+// ============== 27 June 2021 ================================================
+import Form from './core/Form';
+import CustomText from './core/CustomText';
+
+window.Form = Form;
+window.CustomText = CustomText;
+
+
 import 'jodit/build/jodit.min.css'
 import App from './App'
 

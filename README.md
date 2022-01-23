@@ -3,6 +3,29 @@
 > โปรเจคนี้สร้างเมื่อ 21 มกรา 65 เพื่อฝึกฝนวิชาตัวเบา
 
 
+## =========== Agent 
+> copy code from `https://github.com/jenssegers/agent`
+> on 23 Jan 2022
+
+
+## =========== Custom Helper 
+
+> copy code from 
+> https://www.itsolutionstuff.com/post/laravel-8-create-custom-helper-functions-tutorialexample.html
+> on 23 Jan 2022
+
+
+
+
+# =========== Report 
+
+---
+## ========= date 23 Jan 2022 
+> register user with email confirmation.
+
+---
+
+
 
 [sexy_1]:http://1.bp.blogspot.com/_9DRIQ9xf9U4/TKZdUmZ2eaI/AAAAAAAABE0/PC_GRAPj0p4/s1600/sexy-girls-free-wallpapers002-sexy-girls.jpg 
 

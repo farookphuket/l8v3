@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController as Regis;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('x');
+    return view('x_pub.x');
 });
+
+route::get('/userHasConfirmed/{token}',[Regis::class,"userHasConfirmed"]);
+
 
 
 Route::get('/{any}', function () {
-    return view('x');
+    return view('x_pub.x');
 })->where('any', '.*');
 

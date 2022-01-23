@@ -9,17 +9,25 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <!-- custom style START -->
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            font-family:sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="{{asset('css/custom_x.css')}}">
+    <!-- custom style END -->
+
     <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet"/>
     </head>
     <body>
 
-        <div class="p-2">
-
             <div id="app">
 
             </div>
-
-        </div>
+        @yield('content')
         <footer class="footer">
             <div class="container">
                 <div class="has-text-centered">
