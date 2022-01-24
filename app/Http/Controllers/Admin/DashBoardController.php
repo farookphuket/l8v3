@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Auth;
 
-class UserController extends Controller
+class DashBoardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+
+        return response()->json([
+            "user" => $user
+        ]);
     }
 
     /**

@@ -39,6 +39,11 @@
 
             </div>
         </footer>
+        @auth
+            <script>
+                var user_id = "{!!Auth::user()->id!!}"
+            </script>
+        @endauth
         <script src="{{mix('js/app.js')}}"></script>
     </body>
 </html>

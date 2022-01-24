@@ -14,7 +14,7 @@ export default{
         moment:moment,
     }},
     mounted(){
-        console.log(this.$cookies.keys())
+       // console.log(this.$cookies.keys())
     },
 }
 </script>

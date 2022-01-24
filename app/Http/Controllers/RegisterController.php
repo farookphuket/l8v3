@@ -30,17 +30,7 @@ class RegisterController extends Controller
 
     public function login(){
 
-        $valid = request()->validate([
-            "email" => ["required","email"],
-            "password" => ["required"],
-        ]);
 
-        $msg = "<span class=\"tag is-medium is-success\">
-            Welcome </span>";
-
-        return response()->json([
-            "msg" => $msg
-        ]);
     }
 
     /**
@@ -80,6 +70,9 @@ class RegisterController extends Controller
 
         // get the last row
         $user = User::latest()->first();
+
+        // make role default to member
+        $user->role()->attach(2);
 
         // register token
         $token = $user->createToken('auth_token')->plainTextToken;
@@ -146,7 +139,7 @@ class RegisterController extends Controller
             // make a backup for this new user 
             $u = User::where('email',$get->email)
                         ->first();
-//            User::backupUser($u->id,'insert');
+            User::backupUser($u->id,'insert');
 
         else:
 

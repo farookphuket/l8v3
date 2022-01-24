@@ -63,18 +63,31 @@ export default{
             email:'',
             password:'',
         },
-        res_status:'this is test',
+        res_status:'',
+        token:''
     }},
+    mounted(){
+        
+    },
     methods:{
         login(){
             this.res_status = "submitting..."
+            let r_url = '/login'
             let fData = new FormData()
             fData.append("email",this.loForm.email)
             fData.append("password",this.loForm.password)
             let url = `/api/login`
             axios.post(url,fData)
                 .then(res=>{
+                    
                     this.res_status = res.data.msg
+                    this.token = res.data.access_token
+                    this.$cookies.set("token",this.token)
+                    //console.log(res.data)
+                    r_url = res.data.url
+                    setTimeout(()=>{
+                        location.href=r_url
+                    },2300)
                 })
                 .catch(err=>{
                     this.res_status = `<span class="tag is-medium is-danger">

@@ -3,10 +3,17 @@ import {createWebHistory, createRouter} from "vue-router";
 import Home from '../pages/Home';
 import About from '../pages/About';
 import LoginPage from '../pages/Login.vue'
+import LogoutPage from "../pages/LogoutPage.vue"
 import Register from "../pages/Register.vue"
 import UserHasConfirm from '../pages/UserHasConfirmed.vue'
 import UserConfirmationFail from '../pages/UserConfirmationFail.vue'
 
+
+// admin 
+import AdminDashBoard from "../pages/Admin/DashBoard.vue"
+
+// member 
+import MemberDashBoard from "../pages/Member/DashBoard.vue"
 
 export const routes = [
     {
@@ -39,6 +46,29 @@ export const routes = [
         path: '/user-confirmation-fail',
         name: 'userConfirmationFail',
         component: UserConfirmationFail
+    },
+
+    /* ======== Logout */
+
+    {
+        name:'LogoutPage',
+        path:'/logout',
+        component: LogoutPage
+    },
+    /* ======== Member Section START */
+
+    {
+        name:'MemberDashBoard',
+        path:'/member',
+        component: MemberDashBoard
+    },
+    /* ======== Member Section END */
+    /* ======== Admin section */
+
+    {
+        name:'AdminDashBoard',
+        path:'/admin',
+        component: AdminDashBoard
     },
 
 ];
