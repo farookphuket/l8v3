@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 // user 
 use App\Http\Controllers\UserController as USER;
 
+// profile 
+use App\Http\Controllers\ProfileController as Profile;
+
 // for login and signup
 use App\Http\Controllers\RegisterController as Regis;
 use App\Http\Controllers\LoginController as Login;
@@ -44,6 +47,13 @@ Route::post('/checkuserpassport',[Login::class,'checkUserPassport'])
 Route::prefix("member")->name("member.")->middleware('auth:sanctum')
         ->group(function(){
     Route::resource('/dashboard',Member::class);
+
+    // profile
+    Route::resource('/profile',Profile::class);
+
+    // confirm password 
+    Route::post('/confirm-password',[USER::class,"userIsConfirmPassword"])
+        ->name("userIsConfirmPassword");
 
     /* Logout from member */
     Route::delete('/logout',[Login::class,'destroy'])->name('logout');

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Hash;
+use Auth;
+
 class UserController extends Controller
 {
     /**
@@ -17,6 +20,34 @@ class UserController extends Controller
         //
     }
 
+    public function userIsConfirmPassword(){
+        $valid = request()->validate([
+            "conf_pass" => ["required"]
+        ],[
+            "conf_pass.required" => "Error : please enter your current password"
+        ]);
+
+        $confirm = false;
+
+        $msg = "";
+        $conf_pass = request()->conf_pass;
+        $cur_pass = Hash::check($conf_pass,Auth::user()->password);
+
+        if(!$cur_pass):
+            $msg = "<span class=\"tag is-medium is-danger\">
+            Wrong password!</span>";
+        else:
+            $confirm = true;
+            $msg = "<span class=\"tag is-medium is-success\">
+        Success : please press the button again</span>";
+        endif;
+
+
+        return response()->json([
+            "confirmed" => $confirm,
+            "msg" => $msg
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

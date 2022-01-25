@@ -22,6 +22,10 @@
             <router-link :to="{name:'MemberDashBoard'}" 
                 class="navbar-item">Home</router-link>
           <router-link to="/about" class="navbar-item">about</router-link>
+          <router-link :to="{name:'Profile'}" class="navbar-item">
+            <font-awesome-icon icon="user"></font-awesome-icon>     
+            <span class="ml-2">Profile</span>
+          </router-link>
 
           <router-link :to="{name:'LogoutPage'}" 
               class="navbar-item">

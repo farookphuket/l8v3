@@ -82,6 +82,14 @@
     min-height:45px;
 }
 
+#app header nav .navbar-item{
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+
+
+
 .video-container { 
     position: relative; 
     padding-bottom: 56.25%; 
@@ -144,5 +152,10 @@
         text-align:center;
     }
 
+    #app .columns.is-mobile{
+        display:block;
+        /* background-color:#e7e7e7;*/
+        
+    }
 
 }

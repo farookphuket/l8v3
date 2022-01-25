@@ -19,7 +19,36 @@
 
 # =========== Report 
 
+
+
+
+## ========= date 25 Jan 2022 
+> update profile system.
+> the user have to confirm his password to make a change to his profile such 
+> as change "name,email,password". 
+
+[profile_page]:https://i.ibb.co/m6CV5Xt/profile-page.png
+[profile_response_page]:https://i.ibb.co/3r4mdxR/profile-response-page.png
+
+
+
+### ======= profile page
+![profile normal page][profile_page]
+
+
+
+
+### ====== profile response page
+![profile response page][profile_response_page]
+
+
+
+
+
 ---
+
+
+
 ## ========= date 23 Jan 2022 
 > register user with email confirmation.
 

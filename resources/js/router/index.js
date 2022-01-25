@@ -14,6 +14,7 @@ import AdminDashBoard from "../pages/Admin/DashBoard.vue"
 
 // member 
 import MemberDashBoard from "../pages/Member/DashBoard.vue"
+import Profile from "../pages/Member/Profile.vue"
 
 export const routes = [
     {
@@ -61,6 +62,11 @@ export const routes = [
         name:'MemberDashBoard',
         path:'/member',
         component: MemberDashBoard
+    },
+    {
+        name:'Profile',
+        path:'/profile',
+        component: Profile
     },
     /* ======== Member Section END */
     /* ======== Admin section */
