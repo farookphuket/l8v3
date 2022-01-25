@@ -8,6 +8,7 @@ import Register from "../pages/Register.vue"
 import UserHasConfirm from '../pages/UserHasConfirmed.vue'
 import UserConfirmationFail from '../pages/UserConfirmationFail.vue'
 
+import PageNotFound from '../pages/PageNotFound.vue'
 
 // admin 
 import AdminDashBoard from "../pages/Admin/DashBoard.vue"
@@ -15,6 +16,8 @@ import AdminDashBoard from "../pages/Admin/DashBoard.vue"
 // member 
 import MemberDashBoard from "../pages/Member/DashBoard.vue"
 import Profile from "../pages/Member/Profile.vue"
+
+export const user_id = window.user_id
 
 export const routes = [
     {
@@ -54,19 +57,40 @@ export const routes = [
     {
         name:'LogoutPage',
         path:'/logout',
-        component: LogoutPage
+        component: LogoutPage,
+        beforeEnter:(to,from,next)=>{
+            if(!user_id){
+                next({name:'LoginPage'})
+            }else{
+                next()
+            }
+        },
     },
     /* ======== Member Section START */
 
     {
         name:'MemberDashBoard',
         path:'/member',
-        component: MemberDashBoard
+        component: MemberDashBoard,
+        beforeEnter:(to,from,next)=>{
+            if(!user_id){
+                next({name:'LoginPage'})
+            }else{
+                next()
+            }
+        },
     },
     {
         name:'Profile',
         path:'/profile',
-        component: Profile
+        component: Profile,
+        beforeEnter:(to,from,next)=>{
+            if(!user_id){
+                next({name:'LoginPage'})
+            }else{
+                next()
+            }
+        },
     },
     /* ======== Member Section END */
     /* ======== Admin section */
@@ -74,7 +98,24 @@ export const routes = [
     {
         name:'AdminDashBoard',
         path:'/admin',
-        component: AdminDashBoard
+        component: AdminDashBoard,
+        beforeEnter:(to,from,next)=>{
+            if(!user_id){
+                next({name:'LoginPage'})
+            }else{
+                next()
+            }
+        },
+    },
+
+    /* ========= 404 page not found */
+
+    /* ========= non exis page */
+    {
+        path:'/:pathMatch(.*)*',
+        beforeEnter:(to,from,next)=>{
+            next({name:'home'})   
+        },
     },
 
 ];

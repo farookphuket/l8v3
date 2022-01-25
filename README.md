@@ -27,6 +27,40 @@
 > the user have to confirm his password to make a change to his profile such 
 > as change "name,email,password". 
 
+> to protect the route :
+
+```
+// user id came from Auth::user()->id that has set in the x_pub.x.blade.php 
+// file
+export const user_id = window.user_id 
+
+{
+name:Profile,
+path:'/profile',
+beforeEnter:(to,from,next)=>{
+    if(!user_id){
+        next({name:LoginPage})
+    }else{
+        next()
+    }
+},
+},
+
+
+```
+
+> to prevent user from enter the non exists page 
+
+```
+{
+    path: '/:pathMatch(.*)*',
+    beforeEach:(to,from,next)=>{
+        next({name:'404'}) // or which page you want to redirect
+    },
+}
+
+```
+
 [profile_page]:https://i.ibb.co/m6CV5Xt/profile-page.png
 [profile_response_page]:https://i.ibb.co/3r4mdxR/profile-response-page.png
 
