@@ -109,13 +109,20 @@ export const routes = [
     },
 
     /* ========= 404 page not found */
+    {
+        name:'PageNotFound',
+        path:'/page-not-found',
+        component:PageNotFound,
+    },
 
-    /* ========= non exis page */
+    /* ========= not exists page */
     {
         path:'/:pathMatch(.*)*',
         beforeEnter:(to,from,next)=>{
-            next({name:'home'})   
+            next({name:'PageNotFound'})   
         },
+         
+
     },
 
 ];

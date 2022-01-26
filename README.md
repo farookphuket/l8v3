@@ -1,6 +1,37 @@
 # l8v3
-> l8v3 is laravel 8 using vue 3 project created on 21 Jan 2022
-> โปรเจคนี้สร้างเมื่อ 21 มกรา 65 เพื่อฝึกฝนวิชาตัวเบา
+
+
+
+
+> l8v3 is laravel8 using vue3 project created on 21 Jan 2022 
+> this project is to make me learn more of the "vue 3","Laravel 8" library 
+> the truth of me sad but true was
+> ***I cannot create anything at all without the library*** really.
+
+
+
+
+
+
+
+## TH Thailand is my country
+
+> Thailand is my country I've born here ,I'll live here ,I'll die here. 
+> I love my country so I just want you to know I am Thai man.
+
+> โปรเจคนี้สร้างเมื่อ 21 มกรา 65 เพื่อฝึกฝนวิชา ผมอาจจะไม่เขียนภาษาไทยมากนัก ผมไม่ได้กระแดะ 
+> ดัดจริตหรอกนะ แต่ภาษาอังกฤษผมจิ้มได้คล่องกว่า แล้วอีกอย่าง 
+> เพราะว่าภาษาไทยผมต้องจิ้มหลายตัว เมื่อเทียบกับภาษาอังกฤษ 
+
+[thai_flag]:https://image.shutterstock.com/image-illustration/thailand-flag-drawing-by-pastel-260nw-126636206.jpg
+
+![my country][thai_flag]
+
+
+
+
+
+
 
 
 ## =========== Agent 
@@ -39,7 +70,7 @@ name:Profile,
 path:'/profile',
 beforeEnter:(to,from,next)=>{
     if(!user_id){
-        next({name:LoginPage})
+        next({name:'LoginPage'})
     }else{
         next()
     }
@@ -50,16 +81,31 @@ beforeEnter:(to,from,next)=>{
 ```
 
 > to prevent user from enter the non exists page 
+> create the new page call "PageNotFound" 
 
 ```
+// redirect not exists page to page-not-found
+
+
+// import the PageNotFound component in router 
+import PageNotFound from '../pages/PageNotFound.vue'
+
+{
+name:'PageNotFound',
+path: '/page-not-found',
+component:PageNotFound,
+},
 {
     path: '/:pathMatch(.*)*',
     beforeEach:(to,from,next)=>{
-        next({name:'404'}) // or which page you want to redirect
+        next({name:'PageNotFound'}) // or which page you want to redirect
     },
 }
 
 ```
+
+
+
 
 [profile_page]:https://i.ibb.co/m6CV5Xt/profile-page.png
 [profile_response_page]:https://i.ibb.co/3r4mdxR/profile-response-page.png
@@ -87,6 +133,17 @@ beforeEnter:(to,from,next)=>{
 > register user with email confirmation.
 
 ---
+
+## ========= Tools
+
+1. Operation System : I use Arch-Linux on both PC and Computer.
+2. Text Editor : I use Tmux,Vim(gvim)
+3. Browser : google chrome,firefox,brave browser,chromium
+
+
+
+---
+
 
 
 
